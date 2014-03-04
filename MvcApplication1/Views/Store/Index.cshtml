@@ -1,0 +1,17 @@
+﻿@model IEnumerable<Site.Models.Genre>
+
+@{
+    ViewBag.Title = "Home Index";
+}
+
+<h2>Genres</h2>
+
+@Html.ActionLink("Home Link","Index")
+<p>Select from @Model.Count() Genre</p>
+
+<ul>
+    @foreach (var genre in Model)
+    {
+        <li>@Html.ActionLink(@genre.Name, "Browse", new { genre = @genre.Name })</li>
+    }
+</ul>
